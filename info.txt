@@ -1,0 +1,60 @@
+Pyramid automatically install below packages
+
+Installing collected packages: hupper, zope.interface, webob, plaster, zope.deprecation, translationstring, PasteDeploy, plaster-pastedeploy, venusian, pyramid, chardet, binaryornot, MarkupSafe, jinja2, click, six, python-dateutil, arrow, jinja2-time, urllib3, idna, certifi, requests, future, whichcraft, poyo
+
+Successfully installed MarkupSafe-1.1.0 PasteDeploy-2.0.1 arrow-0.13.1 binaryornot-0.4.4 certifi-2018.11.29 chardet-3.0.4 click-7.0 future-0.17.1 hupper-1.5 idna-2.8 jinja2-2.10 jinja2-time-0.2.0 plaster-1.0 plaster-pastedeploy-0.6 poyo-0.4.2 pyramid-1.10.2 python-dateutil-2.8.0 requests-2.21.0 six-1.12.0 translationstring-1.3 urllib3-1.24.1 venusian-1.2.0 webob-1.8.5 whichcraft-0.5.2 zope.deprecation-4.4.0 zope.interface-4.6.0
+
+========================================================================================================================
+Command : cookiecutter gh:Pylons/pyramid-cookiecutter-starter --checkout 1.10-branch
+You've downloaded /home/test/.cookiecutters/pyramid-cookiecutter-starter before. Is it okay to delete and re-download it? [yes]: yes
+project_name [Pyramid Scaffold]: black_dawn
+repo_name [black_dawn]: 
+Select template_language:
+1 - jinja2
+2 - chameleon
+3 - mako
+Choose from 1, 2, 3 (1, 2, 3) [1]: 1
+Select backend:
+1 - none
+2 - sqlalchemy
+3 - zodb
+Choose from 1, 2, 3 (1, 2, 3) [1]: 2
+
+===============================================================================
+Documentation: https://docs.pylonsproject.org/projects/pyramid/en/latest/
+Tutorials:     https://docs.pylonsproject.org/projects/pyramid_tutorials/en/latest/
+Twitter:       https://twitter.com/PylonsProject
+Mailing List:  https://groups.google.com/forum/#!forum/pylons-discuss
+Welcome to Pyramid.  Sorry for the convenience.
+===============================================================================
+
+Change directory into your newly created project.
+    cd black_dawn
+
+Create a Python virtual environment.
+    python3 -m venv env
+
+Upgrade packaging tools.
+    env/bin/pip install --upgrade pip setuptools
+
+Install the project in editable mode with its testing requirements.
+    env/bin/pip install -e ".[testing]"
+
+Migrate the database using Alembic.
+    # Generate your first revision.
+    env/bin/alembic -c development.ini revision --autogenerate -m "init"
+    # Upgrade to that revision.
+    env/bin/alembic -c development.ini upgrade head
+    # Load default data.
+    env/bin/initialize_black_dawn_db development.ini
+
+Run your project's tests.
+    env/bin/pytest
+
+Run your project.
+    env/bin/pserve development.ini
+
+
+=================================================================================================================
+#Run pyramid
+pserve development.ini --reload
