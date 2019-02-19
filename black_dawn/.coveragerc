@@ -1,0 +1,3 @@
+[run]
+source = black_dawn
+omit = black_dawn/test*
